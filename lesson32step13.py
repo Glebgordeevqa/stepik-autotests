@@ -3,7 +3,7 @@ import time
 import unittest
 
 class TestAbs(unittest.TestCase):
-    def test_abs1(self):
+    def test_first(self):
         link = "http://suninjuly.github.io/registration1.html"
         browser = webdriver.Chrome()
         browser.get(link)
@@ -21,7 +21,7 @@ class TestAbs(unittest.TestCase):
         self.assertEqual("Congratulations! You have successfully registered!", welcome_text, "noice")
         browser.quit()
 
-    def test_abs2(self):
+    def test_second(self):
         link = "http://suninjuly.github.io/registration2.html"
         browser = webdriver.Chrome()
         browser.get(link)
