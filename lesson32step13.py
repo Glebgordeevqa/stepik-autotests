@@ -19,7 +19,6 @@ class TestAbs(unittest.TestCase):
         welcome_text_elt = browser.find_element_by_tag_name("h1")
         welcome_text = welcome_text_elt.text
         self.assertEqual("Congratulations! You have successfully registered!", welcome_text, "noice")
-        time.sleep(2)
         browser.quit()
 
     def test_abs2(self):
@@ -38,7 +37,6 @@ class TestAbs(unittest.TestCase):
         welcome_text_elt = browser.find_element_by_tag_name("h1")
         welcome_text = welcome_text_elt.text
         self.assertEqual("Congratulations! You have successfully registered!", welcome_text, "noice")
-        time.sleep(2)
         browser.quit()
 
 if __name__ == '__main__':
