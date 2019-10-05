@@ -41,3 +41,5 @@ class TestMainPage2():
     def test_guest_should_see_basket_link_on_the_main_page(self):
         self.browser.get(link)
         self.browser.find_element_by_css_selector(".basket-mini .btn-group > a")
+
+print("")
