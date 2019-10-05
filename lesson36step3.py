@@ -12,16 +12,13 @@ def browser():
     print("\nquit browser..")
     browser.quit()
 
-@pytest.mark.parametrize('links', ["https://stepik.org/lesson/236895/step/1", "https://stepik.org/lesson/236896/step/1", "https://stepik.org/lesson/236897/step/1", "https://stepik.org/lesson/236898/step/1", "https://stepik.org/lesson/236899/step/1", "https://stepik.org/lesson/236903/step/1", "https://stepik.org/lesson/236904/step/1", "https://stepik.org/lesson/236905/step/1"])
+@pytest.mark.parametrize('links', ["236895", "236896", "236897", "236898", "236899", "236903", "236904", "236905"])
 def test_green_people(browser, links):
     link = f"{links}/"
     answer = math.log(int(time.time()))
-    browser.get(link)
+    browser.get(f"https://stepik.org/lesson/{links}/step/1")
     browser.implicitly_wait(60)
-    input = browser.find_element_by_css_selector("textarea.textarea.ember-text-area.ember-view")
-    input.send_keys(f"{answer}")
-    submit = browser.find_element_by_css_selector("button.submit-submission")
-    submit.click()
-    check = browser.find_element_by_css_selector("pre.smart-hints__hint")
-    correct_msg = check.text
-    assert correct_msg == "Correct!", f"Ответ отличается: {check}"
+    browser.find_element_by_css_selector("textarea.textarea.ember-text-area.ember-view").send_keys(f"{answer}")
+    browser.find_element_by_css_selector("button.submit-submission").click()
+    check = browser.find_element_by_css_selector("pre.smart-hints__hint").text
+    assert check == "Correct!", f"Ответ отличается: {check}"
