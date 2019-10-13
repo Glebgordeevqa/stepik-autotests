@@ -1,4 +1,4 @@
-# stepik-autotests
+# autotests
 Автоматизация тестирования с помощью Selenium и Python
 
 lesson1.6_step3 - Работа с браузером в Selenium
